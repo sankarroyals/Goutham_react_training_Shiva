@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Child = () => {
-  return (
-    <div>Child</div>
-  )
+// Class component
+class Child extends Component {
+  render() {
+    return (
+      <div>Child</div>
+    )
+  }
 }
-
-export default Child
+export default Child;
