@@ -10,7 +10,7 @@ const Parent = () => {
   return (
       <div>
           <div>Parent</div>
-          <div><Child employee={employee} login={login} setLogin={setLogin} /></div>
+          <div><Child employee={employee} login={login} setLogin={setLogin} setEmployee={setEmployee} /></div>
     </div>
   )
 }
