@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 
 const App = () => {
+    // let name  = 'Shiva"   If we use like this instead of useState it wont reflect in document when the variable changes
     const [name,setName] = useState("shiva");
   return (
     <div>
