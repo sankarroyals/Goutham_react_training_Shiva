@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "type": "Mens T-shirt",
+      "cost": 2000,
+      "image": "https://sp.yimg.com/ib/th?id=OPA.rtDRro1ARFFg5Q474C474&o=5&pid=21.1&w=174&h=174"
+    },
+    {
+      "id": 2,
+      "type": "Mens pant",
+      "cost": 3000,
+      "image": "https://sp.yimg.com/ib/th?id=OPA.VWKFNdbv9KusiA474C474&o=5&pid=21.1&w=174&h=174"
+    },
+    {
+      "id": 3,
+      "type": "womens T-shirt",
+      "cost": 2500,
+      "image": "https://sp.yimg.com/ib/th?id=OPA.eprO3sW7YJE1sA474C474&o=5&pid=21.1&w=174&h=174"
+    },
+    {
+      "id": 4,
+      "type": "womens pant",
+      "cost": 3400,
+      "image": "https://sp.yimg.com/ib/th?id=OPA.F9N4aBAPxwxvMQ474C474&o=5&pid=21.1&w=174&h=174"
+    }
+  ],
+  "cart": [
+    {
+      "id": 4,
+      "type": "womens pant",
+      "cost": 3400,
+      "image": "https://sp.yimg.com/ib/th?id=OPA.F9N4aBAPxwxvMQ474C474&o=5&pid=21.1&w=174&h=174"
+    }
+  ]
+}
