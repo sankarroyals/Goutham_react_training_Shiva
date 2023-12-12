@@ -29,8 +29,9 @@
     {
       "id": 4,
       "type": "womens pant",
-      "cost": 3400,
-      "image": "https://sp.yimg.com/ib/th?id=OPA.F9N4aBAPxwxvMQ474C474&o=5&pid=21.1&w=174&h=174"
+      "cost": 10200,
+      "image": "https://sp.yimg.com/ib/th?id=OPA.F9N4aBAPxwxvMQ474C474&o=5&pid=21.1&w=174&h=174",
+      "count": 3
     }
   ]
 }

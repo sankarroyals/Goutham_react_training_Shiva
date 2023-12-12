@@ -16,10 +16,10 @@ const SinglecartItem = ({ d, setData, data}) => {
                 <img src={d.image} alt='' height={150} />
             </div>
             <div>{d.type}</div>
-            <div>{d.cost}</div>
+            <div>{d.count} items selected</div>
+            <div>&#8377;{d.cost}</div>
             <button onClick={() => navigate(`/product/${d.id}`)} style={{cursor: 'pointer' }}>Go to Product</button>
             <button onClick={deleteFromcart} style={{marginLeft: '5px', cursor: 'pointer'}}>Delete</button>
-
         </div>
     )
 }

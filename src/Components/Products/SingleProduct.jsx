@@ -4,15 +4,39 @@ import axios from 'axios'
 const SingleProduct = () => {
     const { id } = useParams()
     const [singleProduct, setSingleProduct] = useState({})
+    const [count, setCount] = useState(1);
     useEffect(() => {
         axios.get(`http://localhost:4000/products/${id}`).then((res) => {
             setSingleProduct(res.data)
         })
     }, [id])
-    const addToCart = () => {
-        axios.post(`http://localhost:4000/cart`, singleProduct).then((res) => {
-            alert('Item added into the cart')
+    const addToCart = async () => {
+        // await axios.post(`http://localhost:4000/cart`, { ...singleProduct, count: count, cost: count * singleProduct.cost }).then((res) => {
+        //     alert('Item added into the cart')
+        // }).catch((err) => {
+        //     alert(err.message)
+        // })
+
+        let prevCount = 0;
+        await axios.get(`http://localhost:4000/cart/${singleProduct.id}`).then((res) => {
+            prevCount += +res.data.count
+        }).catch(err => {
+            prevCount = 0
         })
+        if (prevCount === 0) {
+            await axios.post(`http://localhost:4000/cart`, { ...singleProduct, count: count, cost: count * singleProduct.cost }).then((res) => {
+                alert('Item added into the cart')
+            }).catch((err) => {
+                alert(err.message)
+            })
+        } else {
+            await axios.put(`http://localhost:4000/cart/${singleProduct.id}`, { ...singleProduct, count: +count+prevCount, cost: +(+count+prevCount) * singleProduct.cost }).then((res) => {
+                alert('Item added into the cart')
+            }).catch((err) => {
+                alert(err.message)
+            })
+        }
+       
     }
   return (
       <div style={{display: 'flex', gap: '100px', margin: '10px'}}>
@@ -20,8 +44,22 @@ const SingleProduct = () => {
               <img src={singleProduct.image} alt='' style={{height: '100%'}}/>
           </div>
           <div style={{alignSelf: 'center'}}>
-              <div style={{fontSize: '65px'}}>{singleProduct.type}</div>
-              <div style={{ fontSize: '35px' }}>&#8377;{singleProduct.cost}</div>
+              <div style={{ fontSize: '65px' }}>{singleProduct.type}</div>
+
+              <span>Please select No.of Count</span>
+              <div style={{ fontSize: '35px' }}>
+                  <select style={{width: '100px', padding: '5px'}} onChange={(e) => {
+                      setCount(e.target.value)
+                  }}>
+                      <option value={1}>1</option>
+                      <option value={2}>2</option>
+                      <option value={3}>3</option>
+                      <option value={4}>4</option>
+                  </select>
+              </div>
+              <div style={{ fontSize: '35px' }}>&#8377;{singleProduct.cost * count}</div>
+
+
               <div>
                   <button style={{ padding: '5px', width: '100%', cursor: 'pointer' }} onClick={addToCart}>Add to cart</button>
               </div>
