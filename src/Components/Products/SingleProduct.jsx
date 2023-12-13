@@ -11,32 +11,32 @@ const SingleProduct = () => {
         })
     }, [id])
     const addToCart = async () => {
-        // await axios.post(`http://localhost:4000/cart`, { ...singleProduct, count: count, cost: count * singleProduct.cost }).then((res) => {
-        //     alert('Item added into the cart')
-        // }).catch((err) => {
-        //     console.log(err);
-        //     alert(err.message)
-        // })
-
-        let prevCount = 0;
-        await axios.get(`http://localhost:4000/cart/${singleProduct.id}`).then((res) => {
-            prevCount += +res.data.count
-        }).catch(err => {
-            prevCount = 0
+        await axios.post(`http://localhost:4000/cart`, { ...singleProduct, count: count, cost: count * singleProduct.cost }).then((res) => {
+            alert('Item added into the cart')
+        }).catch((err) => {
+            console.log(err);
+            alert(err.message)
         })
-        if (prevCount === 0) {
-            await axios.post(`http://localhost:4000/cart`, { ...singleProduct, count: count, cost: count * singleProduct.cost }).then((res) => {
-                alert('Item added into the cart')
-            }).catch((err) => {
-                alert(err.message)
-            })
-        } else {
-            await axios.put(`http://localhost:4000/cart/${singleProduct.id}`, { ...singleProduct, count: +count+prevCount, cost: +(+count+prevCount) * singleProduct.cost }).then((res) => {
-                alert('Item added into the cart')
-            }).catch((err) => {
-                alert(err.message)
-            })
-        }
+
+        // let prevCount = 0;
+        // await axios.get(`http://localhost:4000/cart/${singleProduct.id}`).then((res) => {
+        //     prevCount += +res.data.count
+        // }).catch(err => {
+        //     prevCount = 0
+        // })
+        // if (prevCount === 0) {
+        //     await axios.post(`http://localhost:4000/cart`, { ...singleProduct, count: count, cost: count * singleProduct.cost }).then((res) => {
+        //         alert('Item added into the cart')
+        //     }).catch((err) => {
+        //         alert(err.message)
+        //     })
+        // } else {
+        //     await axios.put(`http://localhost:4000/cart/${singleProduct.id}`, { ...singleProduct, count: +count+prevCount, cost: +(+count+prevCount) * singleProduct.cost }).then((res) => {
+        //         alert('Item added into the cart')
+        //     }).catch((err) => {
+        //         alert(err.message)
+        //     })
+        // }
        
     }
   return (
