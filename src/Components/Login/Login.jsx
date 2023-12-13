@@ -9,7 +9,7 @@ const Login = () => {
     function handleCallback(response) {
         console.log("Encoded", jwtDecode(response.credential));
         localStorage.setItem('user', response.credential);
-        navigate('/')
+        window.location.href = '/'
     }
 
     useEffect(() => {

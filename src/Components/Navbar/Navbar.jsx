@@ -10,7 +10,7 @@ const Navbar = () => {
             <Link to='/cart'><div>Cart</div></Link>
             <Link onClick={() => {
                 localStorage.removeItem('user')
-                navigate('/login')
+                window.location.href = '/'
             }}><div>Logout</div></Link>
 
 
