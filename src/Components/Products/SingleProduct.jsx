@@ -46,7 +46,7 @@ const SingleProduct = () => {
           <div style={{alignSelf: 'center'}}>
               <div style={{ fontSize: '65px' }}>{singleProduct.type}</div>
 
-              <span>Please select No.of Count</span>
+              <span>Please select No.of Items you want to add in your cart</span>
               <div style={{ fontSize: '35px' }}>
                   <select style={{width: '100px', padding: '5px'}} onChange={(e) => {
                       setCount(e.target.value)
@@ -61,7 +61,7 @@ const SingleProduct = () => {
 
 
               <div>
-                  <button style={{ padding: '5px', width: '100%', cursor: 'pointer' }} onClick={addToCart}>Add to cart</button>
+                  <button style={{ padding: '10px', width: '100%', cursor: 'pointer', background: 'orange', border: 'none', borderRadius: '15px' }} onClick={addToCart}>Add to cart</button>
               </div>
           </div>
     </div>

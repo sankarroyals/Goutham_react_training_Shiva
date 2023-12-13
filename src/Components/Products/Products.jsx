@@ -10,7 +10,7 @@ const Products = () => {
     }, [])
   
   return (
-      <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', width: '900px', margin: 'auto', marginTop: '10px' }} >
+      <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', width: '1000px', margin: 'auto', marginTop: '220px', marginLeft: '330px', cursor: 'pointer' }} >
           {data.map((d) => (
               <Product d={d} />
           ))}

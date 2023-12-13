@@ -8,9 +8,9 @@ const Product = ({ d }) => {
             <div>
                 <img src={d.image} alt='' height={150} />
             </div>
-            <div>{d.type}</div>
+            <div style={{fontWeight: '600'}}>{d.type}</div>
             <div>{d.cost}</div>
-            <button onClick={()=> navigate(`/product/${d.id}`)}>Go to Product</button>
+            <button onClick={()=> navigate(`/product/${d.id}`)} style={{background:'orange',borderRadius: '15px', border: 'none', padding: '10px', width:'200px'}}><b>Go to Product</b></button>
 
         </div>
     )

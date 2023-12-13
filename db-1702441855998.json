@@ -25,20 +25,5 @@
       "image": "https://sp.yimg.com/ib/th?id=OPA.F9N4aBAPxwxvMQ474C474&o=5&pid=21.1&w=174&h=174"
     }
   ],
-  "cart": [
-    {
-      "id": 1,
-      "type": "Men's T-Shirt",
-      "cost": 2793,
-      "image": "https://sp.yimg.com/ib/th?id=OPA.rtDRro1ARFFg5Q474C474&o=5&pid=21.1&w=174&h=174",
-      "count": 7
-    },
-    {
-      "id": 2,
-      "type": "Men's Pant",
-      "cost": 2097,
-      "image": "https://sp.yimg.com/ib/th?id=OPA.VWKFNdbv9KusiA474C474&o=5&pid=21.1&w=174&h=174",
-      "count": "3"
-    }
-  ]
+  "cart": []
 }
