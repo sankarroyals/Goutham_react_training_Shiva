@@ -5,12 +5,13 @@ const Products = () => {
     const [data, setData] = useState([])
     useEffect(() => {
         axios.get(`http://localhost:4000/products`).then((res) => {
+            console.log(res);
             setData(res.data)
         })
     }, [])
   
   return (
-      <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', width: '1000px', margin: 'auto', marginTop: '220px', marginLeft: '330px', cursor: 'pointer' }} >
+      <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', width: '1000px', margin: 'auto', marginTop: '10px', cursor: 'pointer' }} >
           {data.map((d) => (
               <Product d={d} />
           ))}

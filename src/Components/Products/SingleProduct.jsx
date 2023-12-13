@@ -14,6 +14,7 @@ const SingleProduct = () => {
         // await axios.post(`http://localhost:4000/cart`, { ...singleProduct, count: count, cost: count * singleProduct.cost }).then((res) => {
         //     alert('Item added into the cart')
         // }).catch((err) => {
+        //     console.log(err);
         //     alert(err.message)
         // })
 

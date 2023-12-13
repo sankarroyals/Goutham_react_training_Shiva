@@ -13,7 +13,9 @@ const Cart = () => {
     return (
         data.length > 0 ? <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', width: '900px', margin: 'auto', marginTop: '10px' }} >
             {data.map((d) => (
-                <SinglecartItem d={d} setData={setData} data={data}/>
+                <SinglecartItem d={d} setData={setData} data={data} 
+                    
+                    />
             ))}
         </div> : <div>No items in your cart</div>
     )
