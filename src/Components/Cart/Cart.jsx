@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import SinglecartItem from './SingleCartItem'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+
 
 const Cart = () => {
     const [data, setData] = useState([])
@@ -19,7 +18,7 @@ const Cart = () => {
                     
                     />
             ))}
-        </div> : <div style={{marginTop: '50px'}}>Oops,...No items in your cart, Please go to Products and add your items</div>
+        </div> : <div style={{marginTop: '50px'}}>No items in your cart...</div>
     )
 }
 

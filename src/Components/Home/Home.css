@@ -2,7 +2,7 @@
     text-align: center;
     margin-top: 150px;
     color: orangered;
-    font-size: 50px;
+    font-size: 40px;
   }
   
   .home_Content p{
@@ -23,6 +23,10 @@
     color: #ff4500; 
     font-weight: bold;
     transition: color 0.3s ease-in-out;
+  }
+
+  .shopping_links span {
+    font-size: 20px;
   }
   
   .shopping_links a:hover {

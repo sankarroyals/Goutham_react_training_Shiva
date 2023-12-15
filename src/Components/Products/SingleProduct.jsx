@@ -40,7 +40,7 @@ const SingleProduct = () => {
        
     }
   return (
-      <div style={{display: 'flex', gap: '100px', margin: '10px'}}>
+      <div style={{display: 'flex', gap: '100px', margin: '10px', marginTop: '40px'}}>
           <div style={{ height: '80vh'}}>
               <img src={singleProduct.image} alt='' style={{height: '100%'}}/>
           </div>
@@ -49,7 +49,7 @@ const SingleProduct = () => {
 
               <span>Please select No.of Items you want to add in your cart</span>
               <div style={{ fontSize: '35px' }}>
-                  <select style={{width: '100px', padding: '5px'}} onChange={(e) => {
+                  <select style={{width: '40px', padding: '5px'}} onChange={(e) => {
                       setCount(e.target.value)
                   }}>
                       <option value={1}>1</option>
