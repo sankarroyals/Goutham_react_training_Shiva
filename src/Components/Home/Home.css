@@ -1,6 +1,31 @@
-.home_Content{
+.home_Content {
+    text-align: center;
+    margin-top: 150px;
+    color: orangered;
     font-size: 50px;
-    font-weight: 600;
-    margin-top: 300px;
-    color: red;
-}
+  }
+  
+  .home_Content p{
+    color: #555;
+    font-size: 40px;
+  }
+  .shopping_links {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .shopping_links p {
+    color: #555;
+  }
+  
+  .shopping_links a {
+    text-decoration: none;
+    color: #ff4500; 
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .shopping_links a:hover {
+    color: #ff6347; 
+  }
+  
