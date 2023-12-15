@@ -10,7 +10,7 @@ const Product = ({ d }) => {
             </div>
             <div style={{fontWeight: '600'}}>{d.type}</div>
             <div>{d.cost}</div>
-            <button onClick={()=> navigate(`/product/${d.id}`)} style={{background:'orange',borderRadius: '15px', border: 'none', padding: '10px', width:'200px'}}><b>Go to Product</b></button>
+            <button onClick={()=> navigate(`/product/${d.id}`)} style={{background:'orange',borderRadius: '15px', border: 'none', padding: '6px', width:'200px'}}><b>Go to Product</b></button>
 
         </div>
     )

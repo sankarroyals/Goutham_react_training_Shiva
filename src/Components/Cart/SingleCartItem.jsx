@@ -19,8 +19,8 @@ const SinglecartItem = ({ d, setData, data }) => {
             <div>{d.type}</div>
             <div><b>{d.count}</b> items in the cart</div>
             <div>&#8377;{d.cost}</div>
-            <button onClick={() => navigate(`/product/${d.id}`)} style={{cursor: 'pointer' }}>Go to Product</button>
-            <button onClick={deleteFromcart} style={{marginLeft: '5px', cursor: 'pointer'}}>Delete</button>
+            <button onClick={() => navigate(`/product/${d.id}`)} style={{cursor: 'pointer' , background: 'orange', border: 'none', padding: '8px'}}>Go to Product</button>
+            <button onClick={deleteFromcart} style={{marginLeft: '5px', cursor: 'pointer' , background: 'orange', border: 'none', padding: '8px'}}>Delete</button>
         </div>
     )
 }
