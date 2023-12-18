@@ -1,13 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Hoc from './Hoc';
 
-
-function App() {
+const App =({name}) => {
   return (
-    <div className="App">
-    
-    </div>
-  );
+    <h1>Welcome Mr. {name}</h1>
+  )
 }
 
-export default App;
+export default Hoc(App);
