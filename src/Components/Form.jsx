@@ -7,8 +7,7 @@ const Form = () => {
         e.preventDefault();
         console.log(data?.current?.value);
 
-        // updating
-        // data.current.value='shiva shankar';
+     
     };
 
     useEffect(() => {
