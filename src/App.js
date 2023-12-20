@@ -1,13 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ComponentC from "./Component_C";
+export const UserContext = React.createContext();
 
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-    
+    <div>
+      <center>
+        <UserContext.Provider value={"Shiva"}>
+          <ComponentC />
+        </UserContext.Provider>
+      </center>
     </div>
   );
-}
+};
 
 export default App;
