@@ -1,11 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css"; 
+import C1 from "./Components/C1";
 
 
 function App() {
   return (
-    <div className="App">
-    
+    <div className="app-container"> 
+      <center>
+        <C1 />
+      </center>
     </div>
   );
 }
