@@ -1,15 +1,16 @@
-import React from "react";
-import ComponentC from "./Component_C";
+import React, { useState } from "react";
 import "./App.css"; 
-export const UserContext = React.createContext();
+import DisplayName from "./Components/DisplayName";
 
 const App = () => {
+  const [name, setName] = useState('Shiva')
   return (
+    // props drilling
     <div className="app-container">
       <center>
-        <UserContext.Provider value={"Shiva"}>
-          <ComponentC />
-        </UserContext.Provider>
+        <DisplayName 
+          name={name} setName={setName}
+        />
       </center>
     </div>
   );
