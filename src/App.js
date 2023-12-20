@@ -1,29 +1,38 @@
-import React, {useRef} from 'react'
-import { useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
+import './App.css'; 
 
 const App = () => {
   const data = useRef(null);
-  const submitHandler = e =>{
+
+  const submitHandler = (e) => {
     e.preventDefault();
     console.log(data.current.value);
 
     // updating
     // data.current.value='shiva shankar';
-  }
-  useEffect(()=>{
+  };
+
+  useEffect(() => {
     data.current.focus();
-  },[]);
+  }, []);
 
   return (
-    <div>
+    <div className="app-container">
       <center>
-        <form onSubmit={submitHandler}>
-          <input ref={data} type='text' placeholder='Enter your name' />
-          <input type='submit' />
+        <form onSubmit={submitHandler} className="form-container">
+          <input
+            ref={data}
+            type="text"
+            placeholder="Enter your name"
+            className="input-field"
+          />
+          <button type="submit" className="submit-button">
+            Submit
+          </button>
         </form>
       </center>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
