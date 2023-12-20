@@ -6,7 +6,7 @@ const App = () => {
   const [name, setName] = useState('Shiva')
   return (
     // props drilling
-    <div className="app-container">
+    <div className="app-container"> 
       <center>
         <DisplayName 
           name={name} setName={setName}
