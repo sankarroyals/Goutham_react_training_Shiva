@@ -1,13 +1,13 @@
 import React, { useContext, useState } from 'react'
 import Button from './Button'
+import { AppContext } from '../UseContext'
 
-const DisplayName = ({name, setName}) => {
+const DisplayName = () => {
+  const { name } = useContext(AppContext);
   return (
       <div>
           {name}
-      <Button
-        setName={setName}
-      />
+      <Button />
       </div>
   )
 }

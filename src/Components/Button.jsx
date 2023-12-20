@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AppContext } from '../UseContext';
 
-const Button = ({setName}) => {
+const Button = () => {
+  const { setName } = useContext(AppContext);
   return (
       <div>
           <button onClick={()=>setName('sankar')}>change name</button>
