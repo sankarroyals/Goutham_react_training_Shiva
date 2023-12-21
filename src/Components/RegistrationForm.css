@@ -1,0 +1,99 @@
+.registration-form-container {
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 70px;
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: -20px;
+}
+
+label {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    text-align:left;
+    justify-content: left;
+    font-weight: 600;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 10px;
+   
+}
+
+input {
+    width: calc(100% - 22px); 
+    padding: 10px;
+    margin-bottom: 5px; 
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.validation-icon {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    color: #4caf50;
+}
+
+button {
+    width: 100%;
+    padding: 12px; 
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ddd !important;
+    cursor: not-allowed;
+}
+
+.invalid input {
+    border-color: #d9534f;
+}
+
+.valid input {
+    border-color: #5cb85c;
+}
+
+.success-message {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    border-radius: 3px;
+}
+.submitted-data {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+  }
+  
+  .data-item {
+    margin-bottom: 10px;
+    display: flex;
+    text-align:left;
+    justify-content: left;
+  }
+  
+  .data-item span {
+    font-weight: bold;
+    margin-right: 10px;
+  }
