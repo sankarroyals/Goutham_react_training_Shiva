@@ -3,31 +3,44 @@ import "./RegistrationForm.css";
 
 const RegistrationForm = () => {
   const [email, setEmail] = useState("");
-  const [otp, setOtp] = useState("");
+  const [emailOtp, setEmailOtp] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [mobileOtp, setMobileOtp] = useState("");
   const [name, setName] = useState("");
-  const [age, setAge] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [isOtpSent, setIsOtpSent] = useState(false);
+  const [isEmailOtpSent, setIsEmailOtpSent] = useState(false);
+  const [isMobileOtpSent, setIsMobileOtpSent] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [formData, setFormData] = useState(null);
 
-  const [otpMessage, setOtpMessage] = useState("");
+  const [emailOtpMessage, setEmailOtpMessage] = useState("");
+  const [mobileOtpMessage, setMobileOtpMessage] = useState("");
   const [formSubmitMessage, setFormSubmitMessage] = useState("");
 
   const emailInputRef = useRef(null);
 
-  //   Validation Part
+  // Validation Part
   const isEmailValid = /[a-z]+@gmail.com/.test(email);
-  const isAgeValid = isNaN(age) === false && age !== "";
+  const isMobileValid = /^[0-9]{10}$/.test(mobile);
   const isNameValid = name !== "";
-  const isOtpValid = isNaN(otp) === false && otp.length === 4;
+  const isEmailOtpValid = isNaN(emailOtp) === false && emailOtp.length === 4;
+  const isMobileOtpValid = isNaN(mobileOtp) === false && mobileOtp.length === 4;
+  const isPasswordValid = password.length >= 6;
 
   useEffect(() => {
-    if (isOtpSent) {
-      setOtpMessage("OTP sent successfully.");
-      setTimeout(() => setOtpMessage(""), 5000);
+    if (isEmailOtpSent) {
+      setEmailOtpMessage("Email OTP sent successfully.");
+      setTimeout(() => setEmailOtpMessage(""), 5000);
     }
-  }, [isOtpSent]);
+  }, [isEmailOtpSent]);
+
+  useEffect(() => {
+    if (isMobileOtpSent) {
+      setMobileOtpMessage("Mobile OTP sent successfully.");
+      setTimeout(() => setMobileOtpMessage(""), 5000);
+    }
+  }, [isMobileOtpSent]);
 
   useEffect(() => {
     if (isFormSubmitted) {
@@ -38,15 +51,23 @@ const RegistrationForm = () => {
 
   useEffect(() => {
     setIsFormSubmitted(false);
-  }, [email, otp, name, age]);
+  }, [email, emailOtp, mobile, mobileOtp, name, password]);
 
   useEffect(() => {
     emailInputRef.current.focus();
   }, []);
 
-  const sendOtp = () => {
+  const sendEmailOtp = () => {
+    // Simulate OTP sending logic for email
     setTimeout(() => {
-      setIsOtpSent(true);
+      setIsEmailOtpSent(true);
+    }, 1000);
+  };
+
+  const sendMobileOtp = () => {
+    // Simulate OTP sending logic for mobile
+    setTimeout(() => {
+      setIsMobileOtpSent(true);
     }, 1000);
   };
 
@@ -55,15 +76,23 @@ const RegistrationForm = () => {
     if (isFormValid) {
       setFormData({
         email,
-        otp,
+        emailOtp,
+        mobile,
+        mobileOtp,
         name,
-        age,
+        password,
       });
       setIsFormSubmitted(true);
     }
   };
 
-  const isFormValid = isEmailValid && isOtpValid && isAgeValid && isNameValid;
+  const isFormValid =
+    isEmailValid &&
+    isMobileValid &&
+    isEmailOtpValid &&
+    isMobileOtpValid &&
+    isNameValid &&
+    isPasswordValid;
 
   return (
     <div className="registration-form-container">
@@ -80,48 +109,6 @@ const RegistrationForm = () => {
             Registration Form
           </h1>
 
-          <label>Email</label>
-          <div
-            className={`input-container ${isEmailValid ? "valid" : "invalid"}`}
-          >
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              disabled={isOtpSent}
-              placeholder="example@gmail.com"
-              ref={emailInputRef}
-            />
-            {isEmailValid && <div className="validation-icon">&#10004;</div>}
-          </div>
-
-          {otpMessage && <div className="success-message">{otpMessage}</div>}
-          {!isOtpSent && (
-            <button onClick={sendOtp} disabled={!isEmailValid}>
-              Send OTP
-            </button>
-          )}
-
-          {isOtpSent && (
-            <>
-              <label>OTP:</label>
-              <div
-                className={`input-container ${
-                  isOtpValid ? "valid" : "invalid"
-                }`}
-              >
-                <input
-                  type="text"
-                  value={otp}
-                  onChange={(e) => setOtp(e.target.value)}
-                //   disabled={!isOtpSent}
-                  placeholder="Enter OTP"
-                />
-                {isOtpValid && <div className="validation-icon">&#10004;</div>}
-              </div>
-            </>
-          )}
-
           <label>Name:</label>
           <div
             className={`input-container ${isNameValid ? "valid" : "invalid"}`}
@@ -130,24 +117,114 @@ const RegistrationForm = () => {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-                // disabled={!isOtpValid}
               placeholder="Enter your name"
             />
             {isNameValid && <div className="validation-icon">&#10004;</div>}
           </div>
 
-          <label>Age:</label>
+          <label>Email</label>
           <div
-            className={`input-container ${isAgeValid ? "valid" : "invalid"}`}
+            className={`input-container ${isEmailValid ? "valid" : "invalid"}`}
+          >
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={isEmailOtpSent}
+              placeholder="example@gmail.com"
+              ref={emailInputRef}
+            />
+            {isEmailValid && <div className="validation-icon">&#10004;</div>}
+          </div>
+
+          {emailOtpMessage && (
+            <div className="success-message">{emailOtpMessage}</div>
+          )}
+          {!isEmailOtpSent && (
+            <button onClick={sendEmailOtp} disabled={!isEmailValid}>
+              Send Email OTP
+            </button>
+          )}
+
+          {isEmailOtpSent && (
+            <>
+              <label>Email OTP:</label>
+              <div
+                className={`input-container ${
+                  isEmailOtpValid ? "valid" : "invalid"
+                }`}
+              >
+                <input
+                  type="text"
+                  value={emailOtp}
+                  onChange={(e) => setEmailOtp(e.target.value)}
+                  placeholder="Enter Email OTP"
+                />
+                {isEmailOtpValid && (
+                  <div className="validation-icon">&#10004;</div>
+                )}
+              </div>
+            </>
+          )}
+
+          <label>Mobile Number:</label>
+          <div
+            className={`input-container ${
+              isMobileValid ? "valid" : "invalid"
+            }`}
           >
             <input
               type="text"
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-                // disabled={!isOtpValid}
-              placeholder="Enter your age"
+              value={mobile}
+              onChange={(e) => setMobile(e.target.value)}
+              placeholder="Enter your mobile number"
             />
-            {isAgeValid && <div className="validation-icon">&#10004;</div>}
+            {isMobileValid && <div className="validation-icon">&#10004;</div>}
+          </div>
+
+          {mobileOtpMessage && (
+            <div className="success-message">{mobileOtpMessage}</div>
+          )}
+          {!isMobileOtpSent && (
+            <button onClick={sendMobileOtp} disabled={!isMobileValid}>
+              Send Mobile OTP
+            </button>
+          )}
+
+          {isMobileOtpSent && (
+            <>
+              <label>Mobile OTP:</label>
+              <div
+                className={`input-container ${
+                  isMobileOtpValid ? "valid" : "invalid"
+                }`}
+              >
+                <input
+                  type="text"
+                  value={mobileOtp}
+                  onChange={(e) => setMobileOtp(e.target.value)}
+                  placeholder="Enter Mobile OTP"
+                />
+                {isMobileOtpValid && (
+                  <div className="validation-icon">&#10004;</div>
+                )}
+              </div>
+            </>
+          )}
+
+          <label>Password:</label>
+          <div
+            className={`input-container ${
+              isPasswordValid ? "valid" : "invalid"
+            }`}
+          >
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter your password"
+            />
+            {isPasswordValid && <div className="validation-icon">&#10004;</div>}
           </div>
 
           <button type="submit" disabled={!isFormValid}>
@@ -164,8 +241,9 @@ const RegistrationForm = () => {
         <div className="submitted-data">
           <h2>Submitted Data:</h2>
           <div className="data-item">{`Name: ${formData.name}`}</div>
-          <div className="data-item">{`Age: ${formData.age}`}</div>
           <div className="data-item">{`Email: ${formData.email}`}</div>
+          <div className="data-item">{`Mobile: ${formData.mobile}`}</div>
+          {/* You might not want to display the password in the submitted data */}
         </div>
       )}
     </div>
