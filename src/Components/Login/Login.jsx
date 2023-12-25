@@ -13,13 +13,13 @@ const Login = () => {
     }
 
     useEffect(() => {
-        window.google.accounts.id.initialize({
+        window.google?.accounts.id.initialize({
             client_id:
-                "139939131852-vrp4bd95ie1b8spi2l2e8grreuouim48.apps.googleusercontent.com",
+                "883912602233-q4h2fm2a0lk9s8v2c6optve7c0h26bgh.apps.googleusercontent.com",
             callback: handleCallback,
         });
 
-        window.google.accounts.id.renderButton(document.getElementById("signIn"), {
+        window.google?.accounts.id.renderButton(document.getElementById("signIn"), {
             theme: "outline",
             size: "large",
         });
