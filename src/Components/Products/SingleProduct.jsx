@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import axios from 'axios'
+import { useDispatch } from 'react-redux'
+
+import { changeCartCount } from '../../redux/Cart/CartReducer'
 const SingleProduct = () => {
     const { id } = useParams()
     const [singleProduct, setSingleProduct] = useState({})
     const [count, setCount] = useState(1);
+    const dispatch = useDispatch()
+
     useEffect(() => {
         axios.get(`http://localhost:4000/products/${id}`).then((res) => {
             setSingleProduct(res.data)
@@ -37,6 +42,9 @@ const SingleProduct = () => {
                 alert(err.message)
             })
         }
+        await axios.get(`http://localhost:4000/cart`).then((res) => {
+            dispatch(changeCartCount(res.data.length))
+        })
        
     }
   return (
