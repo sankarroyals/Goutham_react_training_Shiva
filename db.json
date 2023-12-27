@@ -51,13 +51,6 @@
   ],
   "cart": [
     {
-      "id": 3,
-      "type": "women's T-Shirt",
-      "cost": 2396,
-      "image": "https://sp.yimg.com/ib/th?id=OPA.eprO3sW7YJE1sA474C474&o=5&pid=21.1&w=174&h=174",
-      "count": 4
-    },
-    {
       "id": 4,
       "type": "women's Pant",
       "cost": 799,
