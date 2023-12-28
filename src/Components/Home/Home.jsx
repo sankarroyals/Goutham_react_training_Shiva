@@ -7,7 +7,7 @@ const Home = () => {
   return (
      <>
        <div className='home_Content'>
-          Welcome {name} to Shopping Cart
+          Hey! {name}, Welcome to Shopping Cart
     </div>
     <p>Please go to Products</p>
      </>
