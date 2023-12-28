@@ -49,20 +49,5 @@
       "image": "https://sp.yimg.com/ib/th?id=OPA.F9N4aBAPxwxvMQ474C474&o=5&pid=21.1&w=174&h=174"
     }
   ],
-  "cart": [
-    {
-      "id": 4,
-      "type": "women's Pant",
-      "cost": 799,
-      "image": "https://sp.yimg.com/ib/th?id=OPA.F9N4aBAPxwxvMQ474C474&o=5&pid=21.1&w=174&h=174",
-      "count": 1
-    },
-    {
-      "id": 1,
-      "type": "Men's T-Shirt",
-      "cost": 399,
-      "image": "https://sp.yimg.com/ib/th?id=OPA.rtDRro1ARFFg5Q474C474&o=5&pid=21.1&w=174&h=174",
-      "count": 1
-    }
-  ]
+  "cart": []
 }
