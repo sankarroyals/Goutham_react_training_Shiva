@@ -8,6 +8,7 @@ import { faHome, faShoppingCart, faSignOutAlt, faBox } from '@fortawesome/free-s
 const Navbar = () => {
     const navigate = useNavigate();
     const count = useSelector((state) => state.cartS.cart); // get redux variables
+    const {email, picture, name} = useSelector((state)=> state.Auth.userDetails)
 
     return (
         <div className='navbar'>
@@ -22,13 +23,30 @@ const Navbar = () => {
                 </div>
             </Link>
             <Link to='/cart'>
-                <div style={{ position: 'relative' }}>
-                    <FontAwesomeIcon icon={faShoppingCart} /> Cart
-                    <div style={{ position: 'absolute', top: '-10px', right: '-14px', background: 'red', borderRadius: '50%', padding: '0px 6px' }}>
+                <div style={{position: 'relative', display: 'flex', alignItems: 'center', gap: '2px' }}>
+                    <FontAwesomeIcon icon={faShoppingCart} style={{fontSize: '30px'}}/> <div>
+                    Cart
+                    </div>
+                    <div style={{position: 'absolute', top: '0px', left: '10px',  color: 'black', borderRadius: '50%', padding: '0px 6px', fontSize: '12px' , fontWeight: '800'}}>
                         {count}
                     </div>
                 </div>
             </Link>
+
+            <div onClick={(e)=>{
+                document.getElementsByClassName('userDetails')[0].classList.toggle('showUserDetails')
+            }}>
+                <img src={picture} height={40} width={40}  style={{borderRadius: '50%', cursor: 'pointer'}}/>
+            </div>
+            <div className='userDetails'>
+            <div>
+                <img src={picture} height={100} width={100}  style={{borderRadius: '50%', cursor: 'pointer'}}/>
+            </div>
+            <div>
+                {name}
+            </div>
+            <div>
+            <div>
             <Link onClick={() => {
                 localStorage.removeItem('user');
                 window.location.href = '/';
@@ -36,7 +54,11 @@ const Navbar = () => {
                 <div>
                     <FontAwesomeIcon icon={faSignOutAlt} /> Logout
                 </div>
-            </Link>
+            </Link> 
+                </div>
+            </div>
+            </div>
+            
         </div>
     );
 };

@@ -11,6 +11,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { changeCartCount } from './redux/Cart/CartReducer';
+import { authUserDetails } from './redux/Auth/AuthReducer';
 
 function App() {
   const dispatch = useDispatch()
@@ -19,7 +20,10 @@ function App() {
     axios.get(`http://localhost:4000/cart`).then((res) => {
       dispatch(changeCartCount(res.data.length))
     })
+
+    dispatch(authUserDetails());
   }, [])
+
   return (
     <div className="App">
       

@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     height: 50px;
     background: rgb(0, 0, 33);
     padding: 10px;
@@ -7,15 +7,42 @@
     align-items: center;
     gap: 10px;
 }
-a{
+
+a {
+    position: relative;
     padding: 10px;
     color: white;
     text-decoration: none;
     font-weight: 600;
 }
-a:hover{
-    background: white;
-    color: black;
-    border-radius: 10px;
-    font-weight: 600;
+
+a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px; 
+    bottom: 0;
+    left: 50%;
+    background-color: orange;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.userDetails{
+    height: 300px;
+    width: 320px;
+    background: rgb(171, 168, 168);
+    position: absolute;
+    display: none;
+    padding: 10px;
+    top: 73px;
+    border-radius: 15px;
+    transition: all ease 0.2s;
+}
+.showUserDetails{
+    display: block;
 }

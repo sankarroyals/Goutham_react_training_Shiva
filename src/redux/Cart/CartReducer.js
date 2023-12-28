@@ -11,9 +11,9 @@ export const cartSlice = createSlice({
         changeCartCount: (state, action) => {
             state.cart = action.payload;
         }
-    }  /// used to change state variable
+    },
+    
 })
-
 export const { changeCartCount } = cartSlice.actions;
 
 export default cartSlice.reducer;
