@@ -32,17 +32,44 @@ a:hover::before {
     left: 0;
 }
 
-.userDetails{
-    height: 300px;
+.userDetails {
+    height: 230px;
     width: 320px;
-    background: rgb(171, 168, 168);
+    background: #EAF1FB;
     position: absolute;
     display: none;
     padding: 10px;
-    top: 73px;
+    top: 80px;
+    right: 10px;
     border-radius: 15px;
+    border: black;
     transition: all ease 0.2s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 .showUserDetails{
     display: block;
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.logout{
+    color: black;
+    background-color: aliceblue;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+.logout:hover{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+text-decoration: none !important;
 }

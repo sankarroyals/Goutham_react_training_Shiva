@@ -50,6 +50,8 @@ button {
 	width: 100%;
 	padding: 0 2rem;
 	margin: 0 auto;
+
+	
 }
 
 .ion, .ion-logo-google {
@@ -67,3 +69,4 @@ button {
 	text-transform: unset;
 	text-rendering: optimizeLegibility;
 }
+
