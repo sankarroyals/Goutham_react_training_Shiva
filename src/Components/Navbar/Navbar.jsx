@@ -84,7 +84,7 @@ const Navbar = () => {
         <div style={{fontWeight: '600', fontSize: '20px'}}>Hi, {name}!</div>
         <div>
           <div>
-            <Link
+            <div
               to="/"
               className="logout-link"
               onClick={() => {
@@ -95,7 +95,7 @@ const Navbar = () => {
               <div className="logout">
                 <FontAwesomeIcon icon={faSignOutAlt} /> Logout
               </div>
-            </Link>
+            </div>
           </div>
         </div>
       </div>

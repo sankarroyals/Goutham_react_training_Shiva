@@ -5,7 +5,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const basicSlice = createSlice({
     name: 'basic',
     initialState: {
-        user: 'Goutham'
+        user: ''
     }
 })
 
