@@ -16,6 +16,7 @@ export const cartSlice = createSlice({
     
 })
 
+// using thunk 
 export const updatedCart = () => async (dispatch) => {
     await axios.get(`http://localhost:4000/cart`).then((res) => {
         dispatch(changeCartCount(res.data.length))
