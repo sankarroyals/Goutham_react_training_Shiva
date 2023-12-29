@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 
 const Home = () => {
   // const name = useSelector((state) => state.basic.user)
-  const { email, picture, name } = useSelector(
+  const {  name } = useSelector(
     (state) => state.Auth.userDetails
   );
   return (

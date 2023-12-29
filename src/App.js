@@ -10,18 +10,20 @@ import HOCFunc from './HelperFunctions/HOCFunc';
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
-import { changeCartCount } from './redux/Cart/CartReducer';
-import { authUserDetails } from './redux/Auth/AuthReducer';
+import { changeCartCount, updatedCart } from './redux/Cart/CartReducer';
+import { authUserDetails, changeUserDetails } from './redux/Auth/AuthReducer';
+import { jwtDecode } from 'jwt-decode';
 
 function App() {
   const dispatch = useDispatch()
   // when page load cart api called
   useEffect(() => {
-    axios.get(`http://localhost:4000/cart`).then((res) => {
-      dispatch(changeCartCount(res.data.length))
-    })
+    dispatch(updatedCart())
 
-    dispatch(authUserDetails());
+    // dispatch(authUserDetails());
+    if (localStorage.getItem('user')) {
+      dispatch(changeUserDetails(jwtDecode(localStorage.getItem('user'))))
+    }
   }, [])
 
   return (
