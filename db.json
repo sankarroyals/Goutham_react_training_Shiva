@@ -49,13 +49,5 @@
       "image": "https://sp.yimg.com/ib/th?id=OPA.F9N4aBAPxwxvMQ474C474&o=5&pid=21.1&w=174&h=174"
     }
   ],
-  "cart": [
-    {
-      "id": 4,
-      "type": "women's Pant",
-      "cost": 1598,
-      "image": "https://sp.yimg.com/ib/th?id=OPA.F9N4aBAPxwxvMQ474C474&o=5&pid=21.1&w=174&h=174",
-      "count": 2
-    }
-  ]
+  "cart": []
 }
