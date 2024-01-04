@@ -8,7 +8,8 @@ import {
   faShoppingCart,
   faSignOutAlt,
   faBox,
-} from "@fortawesome/free-solid-svg-icons";
+  faUser, 
+} from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -38,12 +39,12 @@ const Navbar = () => {
             gap: "2px",
           }}
         >
-          <FontAwesomeIcon icon={faShoppingCart} style={{ fontSize: "30px" }} />{" "}
+          <img src= 'cart.gif' style={{height: '35px'}}/>{" "}
           <div>Cart</div>
           <div
             style={{
               position: "absolute",
-              top: "0px",
+              top: "8px",
               left: "10px",
               color: "black",
               borderRadius: "50%",
@@ -72,6 +73,13 @@ const Navbar = () => {
         />
       </div>
       <div className="userDetails">
+      <div className="closeIcon" onClick={() => {
+            document
+              .getElementsByClassName("userDetails")[0]
+              .classList.remove("showUserDetails");
+          }}>
+            <i className="fas fa-times cross" ></i>
+          </div>
         <div>
         <div style={{fontWeight: '600', fontSize: '15px'}}>{email}</div>
           <img
@@ -82,19 +90,28 @@ const Navbar = () => {
           />
         </div>
         <div style={{fontWeight: '600', fontSize: '20px'}}>Hi, {name}!</div>
+        <div className='manage'>Manage your Google Account</div>
         <div>
           <div>
             <div
-              to="/"
-              className="logout-link"
-              onClick={() => {
+             
+            >
+             <div className="Account">
+             <FontAwesomeIcon icon={faUser} /> Add Account
+              </div>
+              <div className="logout"  onClick={() => {
                 localStorage.removeItem("user");
                 window.location.href = "/";
-              }}
-            >
-              <div className="logout">
+              }}>
                 <FontAwesomeIcon icon={faSignOutAlt} /> Logout
               </div>
+              <div className="Privacy">
+                  Privacy Policy
+                </div>
+                <div className='dot'>•</div>
+                <div className="Terms">
+                  Terms of Service
+                </div>
             </div>
           </div>
         </div>
